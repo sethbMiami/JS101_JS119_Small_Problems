@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable max-len */
 
-const readline = require('readline-sync');
+//const readline = require('readline-sync');
 
 
 let greetings = (nameArray, jobObj) => {

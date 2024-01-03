@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable indent */
 /* eslint-disable max-len */
 // const readlineSync = require('readline-sync');
 
@@ -106,3 +108,15 @@ const swap = (string) => {
 console.log(swap('Oh what a wonderful day it is'));  // "hO thaw a londerfuw yad ti si"
 console.log(swap('Abcde'));                          // "ebcdA"
 console.log(swap('a'));                              // "a"
+
+const stringToSignedInteger = (string) => {
+  return string * 1;
+};
+
+//console.log(stringToInteger("4321") === 4321); // logs true
+//console.log(stringToInteger("570") === 570); // logs true
+console.log(stringToSignedInteger("4321") === 4321); // logs true
+console.log(stringToSignedInteger("-570") === -570); // logs true
+console.log(stringToSignedInteger("+100") === 100); // logs true
+
+

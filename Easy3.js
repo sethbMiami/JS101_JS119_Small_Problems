@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 
 
 let crunch = string => string.replace(/(.)\1+/g, "$1");

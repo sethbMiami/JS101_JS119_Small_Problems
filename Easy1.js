@@ -42,13 +42,13 @@ while (counter < 100) {
 
 const readline = require('readline-sync');
 
-//let length = Number(readline.question('Enter the length of the room in meters:'));
+let length = Number(readline.question('Enter the length of the room in meters:'));
 
-//let width = Number(readline.question('Enter the width of the room in meters:'));
+let width = Number(readline.question('Enter the width of the room in meters:'));
 
-//let area = length * width;
+let area = length * width;
 
-//console.log(`The area of the room is ${area} square meters (${area * 10.7639} square feet).`);
+console.log(`The area of the room is ${area} square meters (${area * 10.7639} square feet).`);
 
 //Create a simple tip calculator. The program should prompt for a bill amount and a tip rate.
 //The program must compute the tip, and then log both the tip and the total amount of the bill to the console.

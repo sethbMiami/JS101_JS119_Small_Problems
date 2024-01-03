@@ -1,0 +1,15 @@
+{
+  "name": "js101_js119_small_problems",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Easy4.js",
+  "scripts": {
+    "debug": "node myProgram.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

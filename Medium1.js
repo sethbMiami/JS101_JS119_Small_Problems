@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable max-lines-per-function */
 
 const rotateArray = (array) => {
@@ -98,3 +99,75 @@ console.log(splitString.split(' ', 3));
 
 let trimString = '      hello    ';
 console.log(trimString.trim());
+
+const findFibonacciIndexByLength = (index) => {
+  let array = [1, 1];
+
+  while (index > String(array[array.length - 1]).length) {
+    array.push(BigInt(array[array.length - 1]) + BigInt(array[array.length - 2]));
+    //array = array.concat(array[array.length - 1] + array[array.length - 2]);
+
+  }
+  return BigInt(array.length);
+};
+
+console.log(findFibonacciIndexByLength(2n) === 7n);    // 1 1 2 3 5 8 13
+console.log(findFibonacciIndexByLength(3n) === 12n);   // 1 1 2 3 5 8 13 21 34 55 89 144
+console.log(findFibonacciIndexByLength(10n) === 45n);
+console.log(findFibonacciIndexByLength(16n) === 74n);
+//console.log(findFibonacciIndexByLength(100n) === 476n);
+//console.log(findFibonacciIndexByLength(1000n) === 4782n);
+//console.log(findFibonacciIndexByLength(10000n) === 47847n);
+
+// The last example may take a minute or so to run.
+
+function sum(num) {
+  if ( num === 1) {
+    return 1;
+  }
+  console.log(`${num} + sum${num - 1}`);
+  return num + sum(num - 1);
+}
+
+console.log(sum(4));
+
+const fibonacci = (count, number = 1) => {
+  if (count < 0) {
+    return number;
+  }
+  number += (number + 1);
+  return fibonacci(count - 1, number);
+};
+
+console.log(fibonacci(1));       // 1
+console.log(fibonacci(2));       // 1
+console.log(fibonacci(3));       // 2
+console.log(fibonacci(4));       // 3
+fibonacci(5);       // 5
+fibonacci(12);      // 144
+fibonacci(20);      // 6765
+
+let minger = '12fe';
+console.log(parseInt(minger, 10));
+
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+const concatenatedArray = array1.concat(array2);
+console.log(concatenatedArray); // Output: [1, 2, 3, 4, 5, 6]
+
+let thisArray = [1, 2, 3, 4];
+let firstItem = thisArray[0];
+thisArray.shift();
+console.log(thisArray, firstItem);
+
+const numbers = [4, 3, 1, 5, 2];
+
+// Sort the array numerically
+numbers.sort((a, b) => a - b);
+
+console.log(numbers); // Output: [1, 2, 3, 4, 5]
+
+let arr = [2, 4, 6];
+console.log(arr); // [2, 4, 6]
+console.log(arr.length); // 3
+console.log(Object.keys(arr)); // ['0', '1', '2']

@@ -131,21 +131,21 @@ function sum(num) {
 
 console.log(sum(4));
 
-const fibonacci = (count, number = 1) => {
-  if (count < 0) {
-    return number;
-  }
-  number += (number + 1);
-  return fibonacci(count - 1, number);
-};
+// const fibonacci = (count, number = 1) => {
+//   if (count < 0) {
+//     return number;
+//   }
+//   number += (number + 1);
+//   return fibonacci(count - 1, number);
+// };
 
-console.log(fibonacci(1));       // 1
-console.log(fibonacci(2));       // 1
-console.log(fibonacci(3));       // 2
-console.log(fibonacci(4));       // 3
-fibonacci(5);       // 5
-fibonacci(12);      // 144
-fibonacci(20);      // 6765
+// console.log(fibonacci(1));       // 1
+// console.log(fibonacci(2));       // 1
+// console.log(fibonacci(3));       // 2
+// console.log(fibonacci(4));       // 3
+// fibonacci(5);       // 5
+// fibonacci(12);      // 144
+// fibonacci(20);      // 6765
 
 let minger = '12fe';
 console.log(parseInt(minger, 10));
@@ -167,7 +167,48 @@ numbers.sort((a, b) => a - b);
 
 console.log(numbers); // Output: [1, 2, 3, 4, 5]
 
-let arr = [2, 4, 6];
-console.log(arr); // [2, 4, 6]
-console.log(arr.length); // 3
-console.log(Object.keys(arr)); // ['0', '1', '2']
+let arr = [];
+arr[-3] = 5;
+arr["foo"] = "a";
+
+// Is arr empty?
+console.log(arr.length); // 0                Yes
+console.log(Object.keys(arr)); // [ '-3', 'foo' ]  No
+console.log(arr.length);
+
+const fibonacci2 = (number) => {
+  let firstNum = 0;
+  let secondNum = 1;
+  let newSum = 0;
+
+  for (let index = 1; index < number; index++) {
+    newSum = firstNum + secondNum;
+    firstNum = secondNum;
+    secondNum = newSum;
+  }
+  return newSum;
+};
+
+console.log(fibonacci2(20));       // 6765
+//console.log(fibonacci2(50));       // 12586269025
+//console.log(fibonacci2(75));       // 2111485077978050
+
+let memo = {};
+function fibonacci(nth) {
+  if (nth <= 2) {
+    return 1;
+  } else if (memo[nth]) {
+    return memo[nth];
+  } else {
+    memo[nth] = fibonacci(nth - 1) + fibonacci(nth - 2);
+    return memo[nth];
+  }
+}
+
+console.log(fibonacci(1));       // 1
+console.log(fibonacci(2));       // 1
+console.log(fibonacci(3));       // 2
+console.log(fibonacci(4));       // 3
+console.log(fibonacci(5));       // 5
+console.log(fibonacci(12));      // 144
+console.log(fibonacci(20));      // 6765

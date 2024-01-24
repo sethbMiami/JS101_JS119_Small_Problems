@@ -125,3 +125,133 @@ console.log(sumSquareDifference(3));      // 22 --> (1 + 2 + 3)**2 - (1**2 + 2**
 console.log(sumSquareDifference(10));     // 2640
 console.log(sumSquareDifference(1));      // 0
 console.log(sumSquareDifference(100));    // 25164150
+
+
+//'hello' => 'helLo'
+//'hellololo => 'helLolOlo'
+
+const bubbleSort = (array) => {
+  let index = 0;
+
+  while (true) {
+    let firstNum = array[index];
+    let secondNum = array[index + 1];
+
+    if (firstNum > secondNum) {
+      array[index] = secondNum;
+      array[index + 1] = firstNum;
+      index = 0;
+      continue;
+    }
+    index++;
+
+    if (index === array.length - 1) {
+      break;
+    }
+  }
+  return array;
+};
+
+let array1 = [5, 3];
+bubbleSort(array1);
+console.log(array1);    // [3, 5]
+
+let array2 = [6, 2, 7, 1, 4];
+bubbleSort(array2);
+console.log(array2);    // [1, 2, 4, 6, 7]
+
+
+let array3 = ['Sue', 'Pete', 'Alice', 'Tyler', 'Rachel', 'Kim', 'Bonnie'];
+bubbleSort(array3);
+console.log(array3);    // ["Alice", "Bonnie", "Kim", "Pete", "Rachel", "Sue", "Tyler"]
+
+
+let longText =
+  'Four score and seven years ago our fathers brought forth on this ' +
+  'continent a new nation, conceived in liberty, and dedicated to the ' +
+  'proposition that all men are created equal. Now we are engaged in a ' +
+  'great civil war, testing whether that nation, or any nation so ' +
+  'conceived and so dedicated, can long endure. We are met on a great ' +
+  'battlefield of that war. We have come to dedicate a portion of that ' +
+  'field, as a final resting place for those who here gave their lives ' +
+  'that that nation might live. It is altogether fitting and proper that ' +
+  'we should do this.';
+
+let longerText = longText +
+  'But, in a larger sense, we can not dedicate, we can not consecrate, ' +
+  'we can not hallow this ground. The brave men, living and dead, who ' +
+  'struggled here, have consecrated it, far above our poor power to add ' +
+  'or detract. The world will little note, nor long remember what we say ' +
+  'here but it can never forget what they did here. It is for us the ' +
+  'living, rather, to be dedicated here to the unfinished work which ' +
+  'they who fought here have thus far so nobly advanced. It is rather ' +
+  'for us to be here dedicated to the great task remaining before us -- ' +
+  'that from these honored dead we take increased devotion to that ' +
+  'cause for which they gave the last full measure of devotion -- that ' +
+  'we here highly resolve that these dead shall not have died in vain ' +
+  '-- that this nation, under God, shall have a new birth of freedom -- ' +
+  'and that government of the people, by the people, for the people, ' +
+  'shall not perish from the earth.';
+
+
+const longestSentence = (string) => {
+  let array = string.split(/([?.!])/);
+  let lengths = array.map((sentence) => sentence.split(' ').length);
+  console.log(`This sentence has ${Math.max(...lengths)} words in it.`);
+  return array.find((sentence) => sentence.split(' ').length === Math.max(...lengths)) + array[lengths.indexOf(Math.max(...lengths)) + 1];
+};
+
+console.log(longestSentence(longText));
+// Four score and seven years ago our fathers brought forth on this continent a new nation, conceived in liberty, and dedicated to the proposition that all men are created equal.
+//
+// The longest sentence has 30 words.
+
+console.log(longestSentence(longerText));
+// It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.
+//
+// The longest sentence has 86 words.
+
+console.log(longestSentence("Where do you think you're going? What's up, Doc?"));
+// Where do you think you're going?
+//
+// The longest sentence has 6 words.
+
+console.log(longestSentence("To be or not to be! Is that the question?"));
+// To be or not to be!
+//
+// The longest sentence has 6 words.
+
+const is_prime = (number) => {
+  let divisor = 2;
+  let prime = false;
+
+  if (number === 1) return false;
+  while (true) {
+    if (number === divisor) {
+      prime = true;
+      break;
+    } else if (number % divisor === 0) {
+      break;
+    }
+    divisor++;
+  }
+  return prime;
+};
+
+
+console.log(is_prime(1) === false);            // true
+console.log(is_prime(2) === true);             // true
+console.log(is_prime(3) === true);             // true
+console.log(is_prime(4) === false);            // true
+console.log(is_prime(5) === true);             // true
+console.log(is_prime(6) === false);            // true
+console.log(is_prime(7) === true);          // true
+console.log(is_prime(8) === false);            // true
+console.log(is_prime(9) === false);            // true
+console.log(is_prime(10) === false);           // true
+console.log(is_prime(23) === true);            // true
+console.log(is_prime(24) === false);           // true
+console.log(is_prime(997) === true);           // true
+console.log(is_prime(998) === false);          // true
+//console.log(is_prime(3_297_061) === true);     // true
+//console.log(is_prime(23_297_061) === false);   // true
